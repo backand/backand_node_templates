@@ -1,0 +1,26 @@
+{
+  "name": "trello_node_template",
+  "version": "1.0.0",
+  "description": "A template lambda action for integrating Trello with a Backand server-side lambda action",
+  "main": "index.js",
+  "scripts": {
+    "test": "node debug.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evilstickman/backand_node_templates.git"
+  },
+  "keywords": [
+    "Node",
+    "lambda",
+    "backand",
+    "serverless",
+    "trello"
+  ],
+  "author": "Matt Billock",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/evilstickman/backand_node_templates/issues"
+  },
+  "homepage": "https://github.com/evilstickman/backand_node_templates#readme"
+}
