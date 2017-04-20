@@ -1,5 +1,10 @@
-// var BackandSDK = require('backandsdk/backand');
-// var backand = new BackandSDK();
+// This simple example sends a text message from the configured twilio account
+// to the requested number. The message and the target address are both
+// available in the "parameters" object, and are provided as arguments to the
+// Backand custom action that will invoke this Lambda code.
+//
+// Basic Usage:
+// backandCallback({},{to:'555-1212',message:'HELLO WORLD'},{},function(){});
 var twilio = require('twilio');
 
 exports.backandCallback = function(dbRow, parameters, userProfile, respondToBackand) {

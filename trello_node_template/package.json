@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/evilstickman/backand_node_templates/issues"
   },
-  "homepage": "https://github.com/evilstickman/backand_node_templates#readme"
+  "homepage": "https://github.com/evilstickman/backand_node_templates#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "pryjs": "^1.0.3",
+    "sinon": "^2.1.0"
+  },
+  "dependencies": {
+    "trello": "^0.7.0"
+  }
 }

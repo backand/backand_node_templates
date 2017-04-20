@@ -2,16 +2,18 @@
 var chai = require('chai');
 var sinon = require('sinon');
 var expect = chai.expect; // we are using the "expect" style of Chai
-var backandCallback = require('../index.js').backandCallback;
 var twilio = require('twilio');
 var client = null;
+
+// The subject under tests for our purposes is backandCallback:
+var backandCallback = require('../index.js').backandCallback;
 
 
 describe('backandCallback', function(){
   let functionParams;
   beforeEach(function() {
-    var accountSid = 'AC818530b828295a02fcb3c00c38774178'; // Your Account SID from www.twilio.com/console
-    var authToken = '46a1e804c9990772c4eba645fce4365e';   // Your Auth Token from www.twilio.com/console
+    var accountSid = '12345677890ABCDEF'; // Your Account SID from www.twilio.com/console
+    var authToken = '1234567890abcdef';   // Your Auth Token from www.twilio.com/console
     client = new twilio.RestClient(accountSid, authToken);
     var spy = sinon.stub(twilio, "RestClient", function(accountSid, authToken) {
       return client;
