@@ -1,12 +1,9 @@
 // var BackandSDK = require('backandsdk/backand');
 // var backand = new BackandSDK();
 
-const API_KEY = '2991eb0423eb7ac2b95de4f1822f7ce8'; // API Key for Trello
-const TOKEN='961abe46ee877a5789627e4569b84b7632717cef815d62302843dc2f437edaf8'; // using a token to authenticate. There is also an authentication process.
-//const MEMBER_ID='mattbillock1'; // username in trello
-//const BOARD_ID='EcYLC81f'; // from URL - can also be obtained from the API
-//const ORG_ID = 'releaseteam11';
-const LIST_ID = '587ebaa0f10cbc38ba80b95e';
+const API_KEY = 'TRELLO_API_KEY'; // API Key for Trello
+const TOKEN='TRELLO_TOKEN'; // using a token to authenticate. There is also an authentication process.
+const LIST_ID = 'TRELLO_LIST_ID';
 var Trello = require('trello');
 
 exports.backandCallback = function(dbRow, parameters, userProfile, respondToBackand) {
