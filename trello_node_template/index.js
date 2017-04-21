@@ -10,17 +10,26 @@ const LIST_ID = '587ebaa0f10cbc38ba80b95e';
 var Trello = require('trello');
 
 exports.backandCallback = function(dbRow, parameters, userProfile, respondToBackand) {
-  console.log("HERE WE GO BUCKO");
+  if(!parameters.name) {
+    var errors = {message: "name is missing"};
+    respondToBackand(errors, null);
+  }
+  else if(!parameters.description) {
+    var errors = {message: "description is missing"};
+    respondToBackand(errors, null);
+  }
+  else {
+    var trello = new Trello(API_KEY, TOKEN);
+    trello.addCard(parameters.name,parameters.description,LIST_ID, function(error,response){
+      if (error) {
+        console.log('Could not add card:', error);
+        respondToBackand(error, response);
+      }
+      else {
+        console.log('Added card:', response);
+        respondToBackand(error, response);
+      }
+    });
+  }
 
-  var trello = new Trello(API_KEY, TOKEN);
-  trello.addCard(parameters.name,parameters.description,LIST_ID, function(error,response){
-    pry = require('pryjs')
-eval(pry.it)
-    if (error) {
-      console.log('Could not add card:', error);
-    }
-    else {
-      console.log('Added card:', response);
-    }
-  });
 }
