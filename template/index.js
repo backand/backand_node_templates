@@ -8,10 +8,15 @@ exports.backandCallback = function (dbRow, parameters, userProfile, respondToBac
   // Backand will take care of that for you
   // You should call the respondToBackand callback: function(err, data) { ... }
 
+  //Make parameters.runBackandSDKDemo to true to run Backand CRUD demo.
+  //To make the demo run, you need to un-remark backandCrudDemo method below.
+
+  var runBackandSDKDemo = false;
+  if(parameters && parameters.runBackandSDKDemo){
+    runBackandSDKDemo = parameters.runBackandSDKDemo;
+  }
+
   // Bellow is an example of how to handle success and failure of your code
-
-  var runBackandSDKDemo = parameters.runBackandSDKDemo || false;
-
   if(!runBackandSDKDemo){
     // a response data example
     var helloWorld = {"message": "Hello World!"};
