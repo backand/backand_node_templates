@@ -7,7 +7,7 @@
 // backandCallback({},{to:'555-1212',message:'HELLO WORLD'},{},function(){});
 var twilio = require('twilio');
 
-exports.backandCallback = function(dbRow, parameters, userProfile, respondToBackand) {
+exports.backandCallback = function(parameters, userProfile, respondToBackand) {
   var accountSid = 'YOUR_ACCOUNT_SID'; // Your Account SID from www.twilio.com/console
   var authToken = 'YOUR_AUTH_TOKEN';   // Your Auth Token from www.twilio.com/console
 

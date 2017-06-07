@@ -1,7 +1,6 @@
 var handler = require('./handler.js').handler;
 var parameters = {
     "userInput":{},
-    "dbRow" :{},
     "parameters": {name:'card',description:'card description'},
     "userProfile":{}
 };

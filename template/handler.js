@@ -4,7 +4,7 @@ var util = require('util');
 exports.handler = function (event, context, callback) {
   console.log('Received event:', JSON.stringify(event, null, 2));
   try {
-    backandCallback(event.dbRow, event.parameters, event.userProfile, function (error, result) {
+    backandCallback(event.parameters, event.userProfile, function (error, result) {
 
       if (error) {
 
