@@ -1,4 +1,7 @@
 {
   "name": "application-name",
-  "version": "0.0.4"
+  "version": "0.0.4",
+  "dependencies": {
+    "@backand/nodejs-sdk": "latest"
+  }
 }

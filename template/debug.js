@@ -3,7 +3,6 @@ var handler = require('./handler.js').handler;
 
 var parameters = {
   "userInput": {},
-  "dbRow": {},
   "parameters": {runBackandSDKDemo: false},
   "userProfile": {}
 };

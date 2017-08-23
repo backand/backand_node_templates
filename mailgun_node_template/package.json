@@ -1,0 +1,36 @@
+{
+  "name": "mailgun_node_template",
+  "version": "1.0.0",
+  "description": "A template lambda action for integrating Mailgun with a Backand server-side lambda action",
+  "main": "index.js",
+  "scripts": {
+    "test": "node debug.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backand/backand_node_templates.git"
+  },
+  "keywords": [
+    "node",
+    "lambda",
+    "backand",
+    "serverless",
+    "mailgun"
+  ],
+  "author": "Yoram Kornatzky",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/backand/backand_node_templates/issues"
+  },
+  "homepage": "https://github.com/backand/backand_node_templates#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "async": "^2.4.1",
+    "jsonfile": "^3.0.0",
+    "mailgun-js": "^0.11.1"
+  }
+}

@@ -1,7 +1,10 @@
-// var BackandSDK = require('backandsdk/backand');
-// var backand = new BackandSDK();
+// const backand = require('@backand/nodejs-sdk');
+// backand.init({
+//     appName: '<your app name>',
+//     anonymousToken: '<app anonymous token>'
+// });
 
-exports.backandCallback = function (dbRow, parameters, userProfile, respondToBackand) {
+exports.backandCallback = function (parameters, userProfile, respondToBackand) {
   // README - Here is the starting point of your code.
   // Do not change the signature of backandCallback.
   // Do not exit anywhere from your code, meaning, do not use process.exit
@@ -9,7 +12,7 @@ exports.backandCallback = function (dbRow, parameters, userProfile, respondToBac
   // You should call the respondToBackand callback: function(err, data) { ... }
 
   //Make parameters.runBackandSDKDemo to true to run Backand CRUD demo.
-  //To make the demo run, you need to un-remark backandCrudDemo method below.
+  //To make the demo run, you need to un-comment backandCrudDemo method below.
 
   var runBackandSDKDemo = false;
   if(parameters && parameters.runBackandSDKDemo){
@@ -31,9 +34,10 @@ exports.backandCallback = function (dbRow, parameters, userProfile, respondToBac
 
   } else {
     //example calling backand SDK with promise
-    backandCrudDemo().then(function (result) {
+    backandCrudDemo().then(function (response) {
       /* response to exist the action */
-      respondToBackand(null, {result: result.data})
+        console.log("remove", response);
+        respondToBackand(null, {result: response.data})
     });
 
   }
@@ -47,25 +51,21 @@ exports.backandCallback = function (dbRow, parameters, userProfile, respondToBac
 // 4. Uncomment the call for the function backandCrudDemo
 
 // function backandCrudDemo(){
-//
-//     var masterToken = "b50a5125-769c-472f-9287-6ba227818f2e"; //<put here the master token that you run in the action init>;
-//     var userToken = "83d0f58e-f60d-11e5-b112-0ed7053426cb"; //<put here the user token that you run in the action init>;
-//     var token = masterToken + ":" + userToken;
-//
-//     return backand.basicAuth(token)
-//         .then(function() {
-//             return backand.post('/1/objects/items' /* url for create */, {"name":"new item", "description":"new item description"} /* data to post */)
-//         })
-//         .then(function(result) {
-//             console.log("create", result);
-//             return backand.get('/1/objects/items' /* url to read a list */)
-//         })
-//         .then(function(result) {
-//             console.log("read a list", result);
-//             return backand.get('/1/objects/items/1' /* url to read a one */)
-//         })
-//         .then(function(result) {
-//             console.log("read one", result);
-//             return backand.put('/1/objects/items/1' /* url to update */, {"name":"new item change", "description":"new item description change"} /* data to post */)
+//     var id;
+//     return backand.object.getList('items')
+//         .then(function(response){
+//             console.log("get a list", response);
+//             return backand.object.create('items', {"name":"create example"})
+//         }).then(function(response){
+//             console.log("create", response);
+//             id = response.data.__metadata.id;
+//             return backand.object.update('items', id, {"name":"update example"})
+//         }).then(function(response){
+//             console.log("update", response);
+//             return backand.object.getOne('items', id)
+//         }).then(function(response){
+//             console.log("get one", response);
+//             return backand.object.remove('items', id)
 //         });
 // }
+

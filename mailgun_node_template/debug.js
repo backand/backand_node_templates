@@ -1,7 +1,6 @@
 var handler = require('./handler.js').handler;
 var parameters = {
-    "userInput":{},
-    "parameters": {name:'card',description:'card description'},
+    "parameters": { from: 'kornatzky@me.com', to: 'kornatzky@gmail.com', subject: 'Greeting', message: 'hello' },
     "userProfile":{}
 };
 
@@ -12,3 +11,4 @@ handler(parameters, {succeed:function(result){
     console.error("error: ", error);
     process.exit(1);
 }});
+

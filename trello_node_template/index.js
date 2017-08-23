@@ -6,7 +6,7 @@ const TOKEN='TRELLO_TOKEN'; // using a token to authenticate. There is also an a
 const LIST_ID = 'TRELLO_LIST_ID';
 var Trello = require('trello');
 
-exports.backandCallback = function(dbRow, parameters, userProfile, respondToBackand) {
+exports.backandCallback = function(parameters, userProfile, respondToBackand) {
   if(!parameters.name) {
     var errors = {message: "name is missing"};
     respondToBackand(errors, null);
